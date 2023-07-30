@@ -1,7 +1,8 @@
-let books = require('../data');
+let books = require('../data');// importing the In-memory storage for books data.
+
 const ERROR_CODES = require('../utils/errorcodes.util')
 const ERROR_MESSAGE = require('../utils/errormessages.util')
-const { validationResult } = require('express-validator');
+const { validationResult } = require('express-validator');//Utility provided by the 'express-validator' package to handle validation errors
 const { v4: uuidv4 } = require('uuid');
 
 // Controller function to retrieve all books
@@ -14,7 +15,7 @@ exports.getBookById = (req, res) => {
   const bookId = req.params.id;
   const book = books.find((book) => book.id == bookId);
   if (!book) {
-    return res.status(400).json({ error: 'Book not found' });
+    return res.status(404).json({ error: 'Book not found' });
   } else {
     return res.status(200).json(book);
   }
@@ -64,7 +65,7 @@ exports.deleteBookById = (req, res) => {
       message: ERROR_MESSAGE.BOOK_NOT_FOUND
     });
   } else {
-    // If the book was successfully removed, return a 204 status code (No Content).
+    // If the book was successfully removed
     return res.status(200).json({
       success: 200,
       message: "deleted successfully"

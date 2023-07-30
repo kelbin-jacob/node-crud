@@ -1,5 +1,7 @@
-const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4 } = require('uuid');//This function creates a unique identifier (UUID) for the book's 'id'.
 
+
+//In-memory storage for books data.
 const books = [
     {
         id: 1,
