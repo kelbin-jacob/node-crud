@@ -44,7 +44,7 @@ describe('Book Controller Test', () => {
             const bookId = "76957425-3672-4cd8-bce5-37cacbd2abww"; // Replace with an ID that doesn't exist in the data
             const req = { params: { id: bookId } };
             getBookById(req, res);
-            expect(res.status).toHaveBeenCalledWith(400);
+            expect(res.status).toHaveBeenCalledWith(404);
             expect(res.json).toHaveBeenCalledWith({ error: 'Book not found' });
         });
     })

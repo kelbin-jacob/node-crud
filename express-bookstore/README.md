@@ -8,7 +8,7 @@ basic CRUD operations (Create, Read, Update, Delete) on the books.
 
 ## Project Setup
 
-1. Clone the repository: `git clone [https://github.com/kelbin-jacob/node-crud.git]`
+1. Clone the repository: `git clone https://github.com/kelbin-jacob/node-crud.git`
 
 2. Install dependencies: `npm install`
 
